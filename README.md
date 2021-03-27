@@ -11,6 +11,14 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+## Screnshots
+
+![login screen](https://imgur.com/mWUHoQK)
+
+![register screen](https://imgur.com/jViUBhX)
+
+![main app](https://imgur.com/hZp0tu4)
+
 ## Modules
 
 - Login
