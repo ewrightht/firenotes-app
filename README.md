@@ -13,11 +13,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Screnshots
 
-![login screen](https://imgur.com/mWUHoQK)
+![login](https://user-images.githubusercontent.com/70782059/112709122-931e5d00-8e84-11eb-8c15-4385c8840bf8.png)
+![register](https://user-images.githubusercontent.com/70782059/112709131-97e31100-8e84-11eb-8ed1-b90bc7369bc1.png)
+![main](https://user-images.githubusercontent.com/70782059/112709134-9ade0180-8e84-11eb-8076-98bc83b6e1d4.png)
 
-![register screen](https://imgur.com/jViUBhX)
-
-![main app](https://imgur.com/hZp0tu4)
 
 ## Modules
 
