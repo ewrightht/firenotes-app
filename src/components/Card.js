@@ -20,12 +20,12 @@ export const Card = styled.div`
 `;
 
 export const CardTitle = styled.p`
-	color: ${(props) => props.label ? props.theme.secondaryColor : 'white'};
+	color: ${(props) => props.demo ? props.theme.secondaryColor : 'white'};
 	font-weight: bolder;
 	font-size: 22px;
 `;
 
 export const CardDescription = styled.p`
-	color: ${(props) => props.label ? props.theme.secondaryColor : 'white'};
+	color: ${(props) => props.demo ? props.theme.secondaryColor : 'white'};
 	font-weight: bold;
 `;

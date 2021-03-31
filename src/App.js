@@ -4,9 +4,10 @@ import { AuthContext } from './context/AuthContext';
 import AppRouter from './routers/AppRouter';
 
 function App() {
-	const [user, setUser] = useState(
-		JSON.parse(localStorage.getItem('user')) || { logged: false }
+	const [userAuth, setUserAuth] = useState(
+		JSON.parse(localStorage.getItem('user')) || { uid: '', displayName: '' }
 	);
+
 	const theme = {
 		primaryColor: '#55efc4',
 		secondaryColor: '#00b894',
@@ -14,11 +15,12 @@ function App() {
 		headerColor: '#00343D',
 	};
 	useEffect(() => {
-		localStorage.setItem('user', JSON.stringify(user));
-	}, [user]);
+		localStorage.setItem('user', JSON.stringify(userAuth));
+	}, [userAuth]);
+
 	return (
 		<div>
-			<AuthContext.Provider value={{ user, setUser }}>
+			<AuthContext.Provider value={{ userAuth, setUserAuth }}>
 				<ThemeProvider theme={theme}>
 					<AppRouter />
 				</ThemeProvider>

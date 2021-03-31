@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card, CardDescription, CardTitle } from '../../components/Card';
 import { CircleButton } from '../../components/CircleButton';
 import { Navbar } from '../../components/Navbar';
-import { FormControl } from '../../components/PanelLogin';
 import { Container, Row, Typography } from '../../components/utils';
 import { openAddNote } from '../../components/alerts';
+import { AuthContext } from '../../context/AuthContext';
+import { firebase } from '../../firebase/config';
 
 const MainPage = () => {
+  const { userAuth, setUserAuth } = useContext(AuthContext);
+  const { displayName } = userAuth;
+
+  const handleLogout = async () => {
+    await firebase.auth().signOut();
+    setUserAuth({})
+  }
+
 	return (
 		<>
 			<Navbar>
 				<Typography h2>Firenotes</Typography>
-				<FormControl placeholder="Search a note" />
-				<CircleButton>
+        <Typography>{displayName}</Typography>
+				<CircleButton onClick={handleLogout}>
 					<i className="fas fa-user fa-2x"></i>
 				</CircleButton>
 			</Navbar>
@@ -20,10 +29,10 @@ const MainPage = () => {
 				<Typography h1>Your notes</Typography>
 				<Row>
 					<Card onClick={openAddNote} bordered>
-						<CardTitle label={true}>
+						<CardTitle demo>
 							<i className="fas fa-plus"></i> Create a new note
 						</CardTitle>
-						<CardDescription label={true}>
+						<CardDescription demo>
 							Make and awesome description and select the color!
 						</CardDescription>
 					</Card>

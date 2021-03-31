@@ -1,9 +1,9 @@
 import Swal from 'sweetalert2';
 
-export const emptyTextFields = () => {
+export const errorAlert = (message) => {
 	Swal.fire({
 		icon: 'error',
-		title: 'Text fields cannot be empty',
+		title: message,
 		toast: true,
 		position: 'top',
 		timerProgressBar: true,
@@ -12,15 +12,20 @@ export const emptyTextFields = () => {
 	});
 };
 
-export const openAddNote = () => {
+export const successMessage = (message) => {
 	Swal.fire({
-		title: 'Add new note',
-		html:
-			`<input id="swal-input1" class="swal2-input" placeholder="Note title">
-			<textarea id="text" class="swal2-textarea textarea" placeholder="Note description"></textarea>
-      <input type="color">`,
-      confirmButtonColor: '#00b894'
+		icon: 'success',
+		title: message,
+		position: 'center',
 	});
 };
 
-
+export const openAddNote = () => {
+	Swal.fire({
+		title: 'Add new note',
+		html: `<input id="swal-input1" class="swal2-input" placeholder="Note title">
+			<textarea id="text" class="swal2-textarea textarea" placeholder="Note description"></textarea>
+      <input type="color">`,
+		confirmButtonColor: '#00b894',
+	});
+};
